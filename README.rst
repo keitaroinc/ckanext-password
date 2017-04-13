@@ -63,7 +63,7 @@ To install ckanext-password:
 
      pip install ckanext-password
 
-3. Add ``password`` to the ``ckan.plugins`` setting in your CKAN
+3. Add ``custom_password_criteria`` to the ``ckan.plugins`` setting in your CKAN
    config file (by default the config file is located at
    ``/etc/ckan/default/production.ini``).
 
@@ -78,9 +78,12 @@ Config Settings
 
 Document any optional config settings here. For example::
 
-    # The minimum number of hours to wait before re-checking a resource
-    # (optional, default: 24).
-    ckanext.password.some_setting = some_default_value
+    # Regex expression to validate password
+    # default: ^([a-zA-Z0-9!@#$%^&*]{8,15})$
+    ckanext.password.password_regex =
+
+    # Message to display when the password is invalid
+    ckanext.password.invalid_password_message =
 
 
 ------------------------
