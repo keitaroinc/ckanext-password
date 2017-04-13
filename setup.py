@@ -47,7 +47,6 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
 
-
     # What does your project relate to?
     keywords='''CKAN configurable password criteria''',
 
@@ -77,12 +76,14 @@ setup(
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    entry_points='''
+    entry_points= \
+        '''
         [ckan.plugins]
-        password=ckanext.password.plugin:PasswordPlugin
-	[babel.extractors]
-	ckan = ckan.lib.extract:extract_ckan
-    ''',
+        custom_password_criteria=ckanext.password.plugin:PasswordPlugin
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+        ''',
 
     # If you are changing from the default layout of your extension, you may
     # have to change the message extractors, you can read more about babel
