@@ -2,8 +2,8 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/viderumglobal/ckanext-password.svg?branch=master
-    :target: https://travis-ci.org/viderumglobal/ckanext-password
+.. image:: https://travis-ci.com/ViderumGlobal/ckanext-password.svg?token=pzRbH1jQsFTh9wzwvJtq&branch=master
+    :target: https://travis-ci.com/viderumglobal/ckanext-password
 
 .. image:: https://coveralls.io/repos/viderumglobal/ckanext-password/badge.svg
   :target: https://coveralls.io/r/viderumglobal/ckanext-password
