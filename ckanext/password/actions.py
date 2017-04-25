@@ -23,7 +23,7 @@ def user_create(context, data_dict):
     if not valid:
         msg = config.get('ckanext.password.invalid_password_message', None)
         if msg is None:
-            msg = _('Password must consists of 8-15 alphanumeric characters, contain at least one uppercase \
+            msg = _('Password must consist of 8-16 alphanumeric characters, contain at least one uppercase \
                     letter and at least one of the following special characters: !, @, #, $, %, ^, &, *.')
         raise l.ValidationError({'password': [msg]})
     return l.action.create.user_create(context, data_dict)
@@ -38,7 +38,7 @@ def user_update(context, data_dict):
     if not valid:
         msg = config.get('ckanext.password.invalid_password_message', None)
         if msg is None:
-            msg = _('Password must consists of 8-15 alphanumeric characters, contain at least one uppercase \
+            msg = _('Password must consist of 8-16 alphanumeric characters, contain at least one uppercase \
                     letter and at least one of the following special characters: !, @, #, $, %, ^, &, *.')
         raise l.ValidationError({'password': [msg]})
     return l.action.update.user_update(context, data_dict)
