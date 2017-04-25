@@ -16,7 +16,7 @@ def validate_password(password):
     # Validate password with regex
     regex = config.get(
         'ckanext.password.password_regex',
-        '^([a-zA-Z0-9!@#$%^&*]{8,15})$'
+        '^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,16}$'
     )
     match = re.match(regex, password)
     if match is None:
