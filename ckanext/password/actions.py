@@ -34,11 +34,12 @@ def user_update(context, data_dict):
     if 'password' in data_dict:
         password = data_dict['password']
 
-    valid = _h.validate_password(password)
-    if not valid:
-        msg = config.get('ckanext.password.invalid_password_message', None)
-        if msg is None:
-            msg = _('Password must consist of 8-16 alphanumeric characters, contain at least one uppercase \
-                    letter and at least one of the following special characters: !, @, #, $, %, ^, &, *.')
-        raise l.ValidationError({'password': [msg]})
+    if password != '':
+        valid = _h.validate_password(password)
+        if not valid:
+            msg = config.get('ckanext.password.invalid_password_message', None)
+            if msg is None:
+                msg = _('Password must consist of 8-16 alphanumeric characters, contain at least one uppercase \
+                        letter and at least one of the following special characters: !, @, #, $, %, ^, &, *.')
+            raise l.ValidationError({'password': [msg]})
     return l.action.update.user_update(context, data_dict)
