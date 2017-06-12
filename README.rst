@@ -79,10 +79,11 @@ Config Settings
 Document any optional config settings here. For example::
 
     # Regex expression to validate password
-    # default: ^([a-zA-Z0-9!@#$%^&*]{8,15})$
+    # default: ^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])|(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*])|(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])).{8,16}$
     ckanext.password.password_regex =
 
     # Message to display when the password is invalid
+    # default: Password must consist of at least 8 characters and at least three of following four character types: Uppercase letter, Lowercase letter, Number, Special characters: !, @, #, $, %, ^, &, *.'
     ckanext.password.invalid_password_message =
 
 
